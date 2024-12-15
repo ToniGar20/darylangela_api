@@ -3,17 +3,32 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
+use App\Controller\AddGuestController;
+use App\Controller\EditGuestController;
 use App\Repository\GuestRepository;
+use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\Post;
+use ApiPlatform\Metadata\Patch;
+use ApiPlatform\Metadata\Delete;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: GuestRepository::class)]
 #[ApiResource(
     operations: [
-        new \ApiPlatform\Metadata\GetCollection(), // GET /guests
-        new \ApiPlatform\Metadata\Get(),           // GET /guests/{id}
-        new \ApiPlatform\Metadata\Post(),          // POST /guests
-        new \ApiPlatform\Metadata\Patch(),         // PATCH /guests/{id}
-        new \ApiPlatform\Metadata\Delete()         // DELETE /guests/{id}
+        new GetCollection(),
+        new Get(),
+        new Post(
+            name: 'add_guest',
+            uriTemplate: '/guests/{id}',
+            controller: AddGuestController::class
+        ),
+        new Patch(
+            name: 'edit_guest',
+            uriTemplate: '/guests/{id}',
+            controller: EditGuestController::class
+        ),
+        new Delete()
     ],
 )]
 
