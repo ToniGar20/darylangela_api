@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Serializer\Annotation\SerializedName;
 use ApiPlatform\Metadata\ApiResource;
 use App\Controller\AddGuestController;
 use App\Controller\EditGuestController;

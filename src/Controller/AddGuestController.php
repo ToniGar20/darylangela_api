@@ -34,9 +34,9 @@ class AddGuestController extends AbstractController
 
         $guest = new Guest();
         $guest->setEmail($email);
-        $guest->setFirstName($data['first_name'] ?? '');
-        $guest->setLastName($data['last_name'] ?? '');
-        $guest->setPhoneNumber($data['phone_number'] ?? '');
+        $guest->setFirstName($data['firstName'] ?? '');
+        $guest->setLastName($data['lastName'] ?? '');
+        $guest->setPhoneNumber($data['phoneNumber'] ?? '');
         $guest->setComments($data['comments'] ?? null);
         $guest->setAttendance($data['attendance'] ?? false);
 

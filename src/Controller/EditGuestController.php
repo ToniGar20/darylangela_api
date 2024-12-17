@@ -47,13 +47,13 @@ class EditGuestController {
         }
 
         if (isset($data['first_name'])) {
-            $guest->setFirstName($data['first_name']);
+            $guest->setFirstName($data['firstName']);
         }
         if (isset($data['last_name'])) {
-            $guest->setLastName($data['last_name']);
+            $guest->setLastName($data['lastName']);
         }
         if (isset($data['phone_number'])) {
-            $guest->setPhoneNumber($data['phone_number']);
+            $guest->setPhoneNumber($data['phoneNumber']);
         }
         if (isset($data['comments'])) {
             $guest->setComments($data['comments']);
