@@ -8,4 +8,6 @@ api_platform:
             vary: ['Content-Type', 'Authorization', 'Origin']
         formats:
             json: ['application/json', 'application/merge-patch+json']
-        
+    collection:
+        pagination:
+            enabled: false
